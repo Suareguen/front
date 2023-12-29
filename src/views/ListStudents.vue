@@ -25,7 +25,6 @@ import { ref, onMounted } from 'vue'
             const fetchStudenstData = async () => {
                 const response = await getAllStudents()
                 students.value = response
-                console.log(students.value)
             }
 
             onMounted(fetchStudenstData)

@@ -10,8 +10,8 @@
               <th class="py-3 pr-6">Course</th>
             </tr>
           </thead>
-          <tbody class="text-gray-600 divide-y">
-            <tr v-for="(item, idx) in filterLabs[0].submittedBy" :key="idx">
+          <tbody  class="text-gray-600 divide-y">
+            <tr  v-for="(item, idx) in filterLabs[0].submittedBy" :key="idx">
               <td class="pr-6 py-4 whitespace-nowrap">{{ item.student.name }}</td>
               <td class="pr-6 py-4 whitespace-nowrap">
                 {{ item.student.githubUserName }}
