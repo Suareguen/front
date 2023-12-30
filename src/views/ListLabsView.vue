@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
-import { getAllStudents } from "../services/students.service";
-import TableLabsComponent from "../components/TableLabsComponent.vue";
+import { ref, onMounted } from "vue"
+import { getAllStudents } from "../services/students.service"
+import TableLabsComponent from "../components/TableLabsComponent.vue"
 import { updatePullRequestInDataBase, updatePullrequests } from "../services/github.service";
 
 export default {
@@ -29,24 +29,24 @@ export default {
     TableLabsComponent,
   },
   setup() {
-    const labs = ref([]);
-    const select = ref("LAB-101-linux-intro");
-    const value = ref("");
+    const labs = ref([])
+    const select = ref("LAB-103-js-introduction")
+    const value = ref("")
 
     const fetchStudenstData = async () => {
-      const response = await getAllStudents();
-      labs.value = response;
-    };
+      const response = await getAllStudents()
+      labs.value = response
+    }
     const getAPiCall = async () => {
-      const result = await updatePullRequestInDataBase("rebootacademy-labs", select.value);
-      value.value = result;
-      labs.value = await getAllStudents();
-    };
+      const result = await updatePullRequestInDataBase("rebootacademy-labs", select.value)
+      value.value = result
+      labs.value = await getAllStudents()
+    }
     const updatePullRequests = async () => {
-      await updatePullrequests(select.value);
-      labs.value = await getAllStudents();
-    };
-    onMounted(fetchStudenstData);
+      await updatePullrequests(select.value)
+      labs.value = await getAllStudents()
+    }
+    onMounted(fetchStudenstData)
 
     return {
       labs,
