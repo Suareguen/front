@@ -1,7 +1,7 @@
 import api from './config'
 
 
-const getCorrection = async (org, lab) => {
+const updatePullRequestInDataBase = async (org, lab) => {
      try {
         const { data } = await api.get(`/github/pullRequests/org/${org}/repo/${lab}`)
         return data
@@ -21,6 +21,6 @@ const updatePullrequests = async (lab) => {
 }
 
 export { 
-    getCorrection,
+   updatePullRequestInDataBase,
     updatePullrequests
 }

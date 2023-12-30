@@ -21,7 +21,7 @@
 import { ref, onMounted } from "vue";
 import { getAllStudents } from "../services/students.service";
 import TableLabsComponent from "../components/TableLabsComponent.vue";
-import { getCorrection, updatePullrequests } from "../services/github.service";
+import { updatePullRequestInDataBase, updatePullrequests } from "../services/github.service";
 
 export default {
   name: "ListLabsView",
@@ -38,7 +38,7 @@ export default {
       labs.value = response;
     };
     const getAPiCall = async () => {
-      const result = await getCorrection("rebootacademy-labs", select.value);
+      const result = await updatePullRequestInDataBase("rebootacademy-labs", select.value);
       value.value = result;
       labs.value = await getAllStudents();
     };
