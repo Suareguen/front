@@ -1,12 +1,28 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> | 
-    <router-link :to="{ name: 'students' }">Students</router-link> | 
-    <router-link :to="{ name: 'labs' }">Labs</router-link>
-  </nav>
-  <router-view/>
+  <div class="flex flex-row h-screen ">
+    <nav class=" bg-blue-500">
+      <BurguerComponent :updateToggleMenu="toggleMenu" :isOpenMenu="isOpen" />
+    </nav>
+    <router-view />
+  </div>
 </template>
+<script>
+import BurguerComponent from './components/BurguerComponent.vue'
+import { ref } from 'vue'
+export default {
+  components: { BurguerComponent },
+  setup() {
+    const isOpen = ref(false)
+    const toggleMenu = () => {
+      isOpen.value = !isOpen.value
+    }
+    return {
+      isOpen,
+      toggleMenu
+    }
+  },
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -19,8 +35,7 @@
 
 nav {
   padding: 30px;
-
-  a {
+ a {
     font-weight: bold;
     color: #2c3e50;
 
@@ -28,5 +43,4 @@ nav {
       color: #42b983;
     }
   }
-}
-</style>
+}</style>
