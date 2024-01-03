@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-row h-screen ">
-    <nav class=" bg-blue-500 text-white flex flex-col justify-between">
+  <div class="flex flex-row h-full ">
+    <nav class="h-auto bg-blue-500 text-white flex flex-col justify-between">
       <BurguerComponent :updateToggleMenu="toggleMenu" :isOpenMenu="isOpen" />
-      <button v-if="isOpen" class="border border-black rounded p-2 bg-black">Logout</button>
-      <button v-else class="rounded p-2 bg-black flex justify-center">
+      <button v-if="isOpen" class="border border-black rounded p-2 bg-black sticky bottom-4">Logout</button>
+      <button v-else class="rounded p-2 bg-black flex justify-center sticky bottom-4">
         <span class="material-symbols-outlined">
           logout
         </span>

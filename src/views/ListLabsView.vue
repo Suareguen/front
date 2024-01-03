@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black text-white w-full flex flex-col items-center">
+  <div class="h-screen bg-black text-white w-full flex flex-col items-center">
     <button class=" rounded p-2 bg-white text-black mt-2 flex justify-center" @click="getAPiCall">Refresh Data</button> 
     <button class=" rounded p-2 bg-white text-black mt-2 flex justify-center" @click="updatePullRequests">Update and Comment Pull requests</button>
     <select class="text-black mt-2" name="" id="" v-model="select">
