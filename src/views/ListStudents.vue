@@ -1,7 +1,6 @@
 <template>
-    <div>
-        <h1>List Students</h1>
-        <select name="" id="" v-model="select">
+    <div class="bg-black text-white w-full flex flex-col items-center">
+        <select class="text-black mt-2" name="" id="" v-model="select">
             <option value="SCE1">SCE1</option>
             <option value="SCE2">SCE2</option>
         </select>

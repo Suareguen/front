@@ -1,9 +1,7 @@
 <template>
-  <div class="home">
-    <div class="flex justify-between">
-      <h1 class="text-3xl font-bold underline">
-        Home
-      </h1>
+  <div class="home bg-black w-full">
+    <div class="home bg-black w-full h-screen flex justify-center items-center">
+      <img src="../assets/logo2.png" alt="Reboot Academy" class="w-full h-full object-cover">
     </div>
   </div>
 </template>
@@ -11,6 +9,6 @@
 <script>
 
 export default {
-    name: 'HomeView',
+  name: 'HomeView',
 }
 </script>

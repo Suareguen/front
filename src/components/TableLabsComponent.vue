@@ -1,8 +1,8 @@
 <template>
-  <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+  <div class="w-full max-w-screen-xl mx-auto px-4 md:px-8">
     <div class="mt-12 relative h-max overflow-auto">
-      <table class="w-full table-auto text-sm text-left">
-        <thead class="text-gray-600 font-medium border-b">
+      <table class="w-full text-white table-auto text-sm text-left">
+        <thead class=" font-medium border-b">
           <tr>
             <th class="py-3 pr-6">name</th>
             <th class="py-3 pr-6">githubUserName</th>
@@ -10,7 +10,7 @@
             <th class="py-3 pr-6">Course</th>
           </tr>
         </thead>
-        <tbody class="text-gray-600 divide-y">
+        <tbody class=" divide-y">
           <tr v-for="(item, idx) in filterLabs[0]?.submittedBy" :key="idx">
             <td class="pr-6 py-4 whitespace-nowrap">{{ item.student.name }}</td>
             <td class="pr-6 py-4 whitespace-nowrap">{{ item.student.githubUserName }}</td>

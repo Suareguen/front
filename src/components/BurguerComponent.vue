@@ -6,19 +6,10 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
       <div v-if="isOpenMenu"
-        class="w-full h-full p-8 mt-2 bg-white shadow-lg flex flex-col items-center transition-opacity duration-300 ease-in-out">
-        <button>
-          <router-link to="/">Home</router-link>
-        </button>
-        <button>
-          <router-link to="/about">About</router-link>
-        </button>
-        <button>
-          <router-link :to="{ name: 'students' }">Students</router-link>
-        </button>
-        <button>
-          <router-link :to="{ name: 'labs' }">Labs</router-link>
-        </button>
+        class="w-full  p-8 mt-2 flex flex-col items-center transition-opacity duration-300 ease-in-out">
+          <router-link class="text-xl my-2" to="/">Home</router-link>
+          <router-link class="text-xl my-2" :to="{ name: 'students' }">Students</router-link>
+          <router-link class="text-xl my-2" :to="{ name: 'labs' }">Labs</router-link>
       </div>
     </div>
   </div>

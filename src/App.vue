@@ -1,7 +1,13 @@
 <template>
   <div class="flex flex-row h-screen ">
-    <nav class=" bg-blue-500">
+    <nav class=" bg-blue-500 text-white flex flex-col justify-between">
       <BurguerComponent :updateToggleMenu="toggleMenu" :isOpenMenu="isOpen" />
+      <button v-if="isOpen" class="border border-black rounded p-2 bg-black">Logout</button>
+      <button v-else class="rounded p-2 bg-black flex justify-center">
+        <span class="material-symbols-outlined">
+          logout
+        </span>
+      </button>
     </nav>
     <router-view />
   </div>
@@ -30,17 +36,17 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
 nav {
   padding: 30px;
- a {
+
+  a {
     font-weight: bold;
-    color: #2c3e50;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: black;
     }
   }
-}</style>
+}
+</style>
