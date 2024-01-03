@@ -10,7 +10,7 @@
       </svg>
       <div v-if="isOpenMenu"
         class="w-full  p-8 mt-2 flex flex-col items-center transition-opacity duration-300 ease-in-out">
-        <router-link class="text-xl my-2" to="/">Home</router-link>
+        <router-link class="text-xl my-2" :to="{ name: 'home' }">Home</router-link>
         <router-link class="text-xl my-2" :to="{ name: 'students' }">Students</router-link>
         <router-link class="text-xl my-2" :to="{ name: 'labs' }">Labs</router-link>
       </div>
