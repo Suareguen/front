@@ -2,6 +2,7 @@
   <div class="h-screen bg-black text-white w-full flex flex-col items-center">
     <button class=" rounded p-2 bg-white text-black mt-2 flex justify-center" @click="getAPiCall">Refresh Data</button> 
     <button class=" rounded p-2 bg-white text-black mt-2 flex justify-center" @click="updatePullRequests">Update and Comment Pull requests</button>
+    <SelectComponent />
     <select class="text-black mt-2" name="" id="" v-model="select">
       <option v-for="lab in labs.labs" :key="lab._id" :value="lab.title">
         {{ lab.title }}
@@ -21,11 +22,13 @@ import { ref, onMounted } from "vue"
 import { getAllStudents } from "../services/students.service"
 import TableLabsComponent from "../components/TableLabsComponent.vue"
 import { updatePullRequestInDataBase, updatePullrequests } from "../services/github.service";
+import SelectComponent from "@/components/SelectComponent.vue"
 
 export default {
   name: "ListLabsView",
   components: {
     TableLabsComponent,
+    SelectComponent
   },
   setup() {
     const labs = ref([])
