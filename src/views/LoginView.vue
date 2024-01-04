@@ -37,7 +37,7 @@
       <div class="flex flex-row justify-end w-full mt-4">
         <button
     class="px-4 py-2 text-sm text-white duration-150 bg-green-500 rounded-md hover:bg-indigo-700 active:shadow-lg">
-   <router-link to="/home">
+   <router-link :to="{ name: 'home' }">
        LOGIN
    </router-link>
   </button>
