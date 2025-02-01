@@ -1,13 +1,8 @@
 <template>
   <div class="h-screen bg-black text-white w-full flex flex-col items-center">
-    <button class=" rounded p-2 bg-white text-black mt-2 flex justify-center" @click="getAPiCall">Refresh Data</button> 
-    <button class=" rounded p-2 bg-white text-black mt-2 flex justify-center" @click="updatePullRequests">Update and Comment Pull requests</button>
-    <SelectComponent />
-    <select class="text-black mt-2" name="" id="" v-model="select">
-      <option v-for="lab in labs.labs" :key="lab._id" :value="lab.title">
-        {{ lab.title }}
-      </option>
-    </select>
+    <!-- <button class=" rounded p-2 bg-white text-black mt-2 flex justify-center" @click="getAPiCall">Refresh Data</button> 
+    <button class=" rounded p-2 bg-white text-black mt-2 flex justify-center" @click="updatePullRequests">Update and Comment Pull requests</button> -->
+    <SelectComponent :labs="labs && labs?.labs" v-model="select"/>
     <TableLabsComponent
       v-if="labs.labs && labs.labs.length > 0"
       :labs="labs.labs"
@@ -48,13 +43,22 @@ export default {
       await updatePullrequests(select.value)
       labs.value = await getAllStudents()
     }
+
+    const updateSelect = (newValue) => {
+      try {
+        select.value = newValue
+      } catch (error) {
+        throw new Error(error)
+      }
+    }
     onMounted(fetchStudenstData)
 
     return {
       labs,
       select,
       getAPiCall,
-      updatePullRequests
+      updatePullRequests,
+      updateSelect
     };
   },
 };

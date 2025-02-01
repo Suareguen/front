@@ -3,10 +3,10 @@
     <div v-if="$route.name !== 'login'" class="flex flex-row h-full w-full">
     <nav class="h-auto bg-blue-500 text-white flex flex-col justify-between">
       <BurguerComponent :updateToggleMenu="toggleMenu" :isOpenMenu="isOpen" />
-      <button v-if="isOpen" class="border border-black rounded p-2 bg-black sticky bottom-4">Logout</button>
+      <button v-if="isOpen" class="border border-black rounded p-2 bg-black sticky bottom-4">LOGOUT</button>
       <button v-else class="rounded p-2 bg-black flex justify-center sticky bottom-4">
         <span class="material-symbols-outlined">
-          logout
+        <router-link class="text-xl my-2" :to="{ name: 'login' }">logout</router-link>
         </span>
       </button>
     </nav>
