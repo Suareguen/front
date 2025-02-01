@@ -21,9 +21,10 @@ import { ref } from 'vue'
 export default {
   components: { BurguerComponent },
   setup() {
-    const isOpen = ref(false)
+    const isOpen = ref(true)
     const toggleMenu = () => {
       isOpen.value = !isOpen.value
+    console.log(isOpen.value)
     }
     return {
       isOpen,

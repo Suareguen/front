@@ -30,6 +30,7 @@ export default {
   props: {
     students: Array,
     select: String,
+    input: String
   },
   setup(props) {
     const filterStudents = computed(() => {
@@ -41,8 +42,10 @@ export default {
       // Now filter students based on the selected course
       return props.students.filter((student) => {
         return student.courses.some((course) => course.title === props.select);
-      });
-    });
+      }).filter((student) => {
+        return student.name.toLowerCase().includes(props.input.toLowerCase())
+      })
+    })
     return {
       filterStudents,
     };
